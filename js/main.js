@@ -2,7 +2,7 @@
 
 const RIGHT_ARROW = 37;
 const LEFT_ARROW = 39;
-const arrowVisual = `
+const arrowsVisual = `
     <style>
       .arrows__wrap {
         position: absolute;
@@ -27,7 +27,7 @@ const screens = Array.from(document.querySelectorAll(`template`));
 const selectSlide = (number) => {
   mainElement.innerHTML = ``;
   mainElement.appendChild(screens[number].content.cloneNode(true));
-}
+};
 
 let current = 0;
 const select = (index) => {
@@ -50,9 +50,9 @@ document.addEventListener(`keydown`, (evt) => {
 
 select(0);
 
-const arrowBlock = document.createElement("div");
+const arrowBlock = document.createElement(`div`);
 arrowBlock.innerHTML = arrowsVisual;
-arrowBlock.setAttribute('class', 'arrows__wrap');
+arrowBlock.setAttribute(`class`, `arrows__wrap`);
 appElement.appendChild(arrowBlock);
 
 const leftArrowVisual = document.querySelector(`.arrows__btn--left`);
