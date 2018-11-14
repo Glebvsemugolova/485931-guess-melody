@@ -2,7 +2,7 @@
 
 const RIGHT_ARROW = 37;
 const LEFT_ARROW = 39;
-const ARROWS_VISUAL = `
+const arrowVisual = `
     <style>
       .arrows__wrap {
         position: absolute;
@@ -55,15 +55,15 @@ arrowBlock.innerHTML = arrowsVisual;
 arrowBlock.setAttribute('class', 'arrows__wrap');
 appElement.appendChild(arrowBlock);
 
-const leftARROWS_VISUAL = document.querySelector(`.arrows__btn--left`);
-const rightARROWS_VISUAL = document.querySelector(`.arrows__btn--right`);
+const leftArrowVisual = document.querySelector(`.arrows__btn--left`);
+const rightArrowVisual = document.querySelector(`.arrows__btn--right`);
 
 document.addEventListener(`click`, (evt) => {
   switch (evt.target) {
-    case leftARROWS_VISUAL:
+    case leftArrowVisual:
       select(current + 1);
       break;
-    case rightARROWS_VISUAL:
+    case rightArrowVisual:
       select(current - 1);
       break;
   }
