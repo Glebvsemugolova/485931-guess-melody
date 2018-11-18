@@ -1,7 +1,7 @@
 'use strict';
 
-const RIGHT_ARROW = 37;
-const LEFT_ARROW = 39;
+const RIGHT_ARROW = 39;
+const LEFT_ARROW = 37;
 const arrowsVisual = `
     <style>
       .arrows__wrap {
@@ -22,7 +22,22 @@ const arrowsVisual = `
 
 const mainElement = document.querySelector(`section.main`);
 const appElement = document.querySelector(`.app`);
-const screens = Array.from(document.querySelectorAll(`template`));
+
+const welcomeScreen = document.querySelector(`#welcome`);
+const gameGenreScreen = document.querySelector(`#game-genre`);
+const gameArtistScreen = document.querySelector(`#game-artist`);
+const resultSuccessScreen = document.querySelector(`#result-success`);
+const failTimeScreen = document.querySelector(`#fail-time`);
+const failTriesScreen = document.querySelector(`#fail-tries`);
+const screens = [
+  welcomeScreen,
+  gameGenreScreen,
+  gameArtistScreen,
+  resultSuccessScreen,
+  failTimeScreen,
+  failTriesScreen
+];
+
 
 const selectSlide = (number) => {
   mainElement.innerHTML = ``;
@@ -61,10 +76,10 @@ const rightArrowVisual = document.querySelector(`.arrows__btn--right`);
 document.addEventListener(`click`, (evt) => {
   switch (evt.target) {
     case leftArrowVisual:
-      select(current + 1);
+      select(current - 1);
       break;
     case rightArrowVisual:
-      select(current - 1);
+      select(current + 1);
       break;
   }
 });
