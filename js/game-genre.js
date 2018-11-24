@@ -98,4 +98,4 @@ gameGenreForm.addEventListener(`click`, () => {
 submitBtn.addEventListener(`click`, function (evt) {
   evt.preventDefault();
   changeScreen(gameArtistScreen);
-};
+});

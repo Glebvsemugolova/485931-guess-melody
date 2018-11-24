@@ -1,4 +1,5 @@
-import {render} from './util';
+import {changeScreen, render} from './util';
+import {welcomeScreen} from "./welcome";
 
 const failTriesTemplate = `
   <section class="result">
@@ -11,3 +12,8 @@ const failTriesTemplate = `
 
 export const failTriesScreen = render(failTriesTemplate);
 
+const resultReplayBtn = failTriesScreen.querySelector(`.result__replay`);
+
+resultReplayBtn.addEventListener(`click`, () => {
+  changeScreen(welcomeScreen);
+});

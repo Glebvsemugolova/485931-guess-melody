@@ -1,6 +1,6 @@
 import {changeScreen, render} from './util';
 import {resultSuccessScreen} from "./result-success";
-
+import {failTriesScreen} from "./fail-tries";
 
 const gameArtistTemplate = `
   <section class="game game--artist">
@@ -66,10 +66,12 @@ const gameArtistTemplate = `
 export const gameArtistScreen = render(gameArtistTemplate);
 
 const artistForm = gameArtistScreen.querySelector(`.game__artist`);
+const randomNumber = Math.round(Math.random());
 
-artistForm.addEventListener(`click`, () => {
-  if (gameArtistScreen.querySelector(`artist__input:checked`)) {
-    changeScreen(resultSuccessScreen);
+artistForm.addEventListener(`click`, (evt) => {
+  if (evt.target.getAttribute(`type`) === `radio` && evt.target.checked) {
+
+    changeScreen(randomNumber === 1 ? resultSuccessScreen : failTriesScreen);
   }
 });
 
