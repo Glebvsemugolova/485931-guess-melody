@@ -1,4 +1,5 @@
-import {render} from './util';
+import {changeScreen, render} from './util';
+import {gameArtistScreen} from "./game-artist";
 
 const gameGenreTemplate = `
   <section class="game game--genre">
@@ -81,3 +82,20 @@ const gameGenreTemplate = `
 
 export const gameGenreScreen = render(gameGenreTemplate);
 
+const submitBtn = gameGenreScreen.querySelector(`.game__submit`);
+const gameGenreForm = gameGenreScreen.querySelector(`.game__tracks`);
+
+submitBtn.setAttribute(`disabled`, `true`);
+gameGenreForm.addEventListener(`click`, () => {
+
+  if (gameGenreScreen.querySelector(`.game__input:checked`)) {
+    submitBtn.removeAttribute(`disabled`);
+  } else {
+    submitBtn.setAttribute(`disabled`, `true`);
+  }
+});
+
+submitBtn.addEventListener(`click`, function (evt) {
+  evt.preventDefault();
+  changeScreen(gameArtistScreen);
+};

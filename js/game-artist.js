@@ -1,4 +1,5 @@
-import {render} from './util';
+import {changeScreen, render} from './util';
+import {resultSuccessScreen} from "./result-success";
 
 
 const gameArtistTemplate = `
@@ -64,4 +65,11 @@ const gameArtistTemplate = `
 
 export const gameArtistScreen = render(gameArtistTemplate);
 
+const artistForm = gameArtistScreen.querySelector(`.game__artist`);
+
+artistForm.addEventListener(`click`, () => {
+  if (gameArtistScreen.querySelector(`artist__input:checked`)) {
+    changeScreen(resultSuccessScreen);
+  }
+});
 
