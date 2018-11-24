@@ -1,12 +1,13 @@
 export const render = (template) => {
-  const wrapper = document.createElement(`div`);
-  wrapper.innerHTML = template.trim();
-  return wrapper;
+  const screen = document.createElement(`div`);
+  screen.innerHTML = template.trim();
+  return screen;
 };
 
 const mainElement = document.querySelector(`section.main`);
 
-export const changeScreen = (element) => {
+export const changeScreen = (screen) => {
   mainElement.innerHTML = ``;
-  mainElement.appendChild(element);
+  mainElement.appendChild(screen);
 };
+
