@@ -1,7 +1,7 @@
 # Личный проект «Угадай мелодию» [![Build status][travis-image]][travis-url]
 
 * Студент: [Глеб Винокуров](https://up.htmlacademy.ru/ecmascript/7/user/485931).
-* Наставник: [Игорь Тараканов](https://htmlacademy.ru/profile/id487569).
+* Наставник: [Сергей Вохмянин](https://htmlacademy.ru/profile/id530823).
 
 ---
 

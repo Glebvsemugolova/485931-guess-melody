@@ -106,13 +106,11 @@ gulp.task(`build`, [`assemble`], () => {
   gulp.start(`imagemin`);
 });
 
-gulp.task(`test`, () => {
-});
-
 gulp.task(`test`, function () {
   return gulp
     .src([`js/**/*.test.js`])
     .pipe(rollup({
+      external: [`chai`],
       plugins: [
         commonjs()
       ]}, `cjs`))
